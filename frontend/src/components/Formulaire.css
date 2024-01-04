@@ -1,0 +1,33 @@
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  font-weight: bold;
+  font-size: 1.5rem;
+  gap: 40px;
+  /* border: solid; */
+  /* box-shadow: 6px 6px 6px black; */
+  width: 30%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2rem;
+  color: black;
+  box-shadow: 6px 16px 36px 13px rgb(0 0 0 / 29%);
+  -webkit-box-shadow: 6px 16px 36px 13px rgb(0 0 0 / 29%);
+  -moz-box-shadow: 6px 16px 36px 13px rgba(0, 0, 0, 0.29);
+}
+.textArea {
+  resize: none;
+  width: 100%;
+  height: 82px;
+
+  border-radius: 5px;
+}
+
+.label {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
