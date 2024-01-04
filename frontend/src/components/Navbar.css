@@ -1,0 +1,39 @@
+.nav {
+  position: fixed;
+  margin: 10px;
+}
+
+.navbar {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  z-index: 1;
+  gap: 100px;
+  font-family: Public Sans;
+}
+.paragrapheNavbar {
+  margin-right: 100px;
+  font-size: 20px;
+
+  box-shadow: 6px 16px 36px 13px rgb(0 0 0 / 29%);
+  -webkit-box-shadow: 6px 16px 36px 13px rgb(0 0 0 / 29%);
+  -moz-box-shadow: 6px 16px 36px 13px rgba(0, 0, 0, 0.29);
+}
+
+@media screen and (min-width: 1482px) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: flex-end;
+    position: absolute;
+    left: 100vh;
+    top: 5vh;
+  }
+
+  .paragrapheNavbar {
+    margin-right: 100px;
+    font-size: 30px;
+  }
+}

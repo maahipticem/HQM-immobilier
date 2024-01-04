@@ -34,10 +34,25 @@ CREATE TABLE admin (
   numberPhone VARCHAR (100) NOT NULL
 );
 
+CREATE TABLE sale(
+  id int unsigned primary key auto_increment not null,
+  name VARCHAR (100) NOT NULL,
+  numeroOffre VARCHAR (100) NOT NULL, 
+  imageToUrl VARCHAR (450) NOT NULL,
+  imageToUrl2 VARCHAR (450) NOT NULL,
+  imageToUrl3 VARCHAR (450) NOT NULL,
+  imageToUrl4 VARCHAR (450) NOT NULL,
+  imageToUrl5 VARCHAR (450) NOT NULL,
+  adresse VARCHAR (250) NOT NULL,
+  descriptif TEXT NULL,
+  disponibilite DATE NOT NULL,
+   id_home INT UNSIGNED NOT NULL,
+  CONSTRAINT fk_sale_home Foreign Key (id_home) REFERENCES home(id)
+);
 
 
 INSERT INTO home (name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, disponibilite)
-VALUES ("ABC", "12345", "https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuOdXad5Jpt0YFJ~Dqx8xEepk0k_hkiGic5lTybUHjlf1FhydqGnTGEBMwQJ0sU_jrXdUhAjuWm8YeOfPxrLANEzm2~hmlQmerMLpc1Q5YmGC4ypB0dINX86r85R3fRtbnQmJWbfkhx_FPiino_lxrCew_YcHQ~o0fdS6YGR_kQusaadf7h7zlESof744NH__vJ3mh6FeNuwGeoSNYyd8SWJg--.jpg", "https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuPjl0WarhTbYEZfeLQo6aO1rG0HF_j58YGMe4_epDLps0rSzmIdB_V_WTtbUIKWBUuoF3z3oXUCW1stePQrRJtC1R9jTzgowQgdFrOHT5JSBtNBRL~WABZ~Esq9iyFJzX79wMJ12kec6Vquq5Qz8Y1Ot_v4liMDl9xl4QsrK4wqI_3olJF4Zp~W7Cg5qm9XHsOKCzXNvnWhxEcx2jKgwQTig--.jpg","https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuKVN2o8NbCrPjHP9bY2WClQ~XKELYGUypBapLQAU50p_V8p1vQlzwUyrgUUkgW9woF9HzbRjJVqSX16d7tFJ7bTPk9DaPB~2rRWPxEjmOxQyw1m4GU9Fl7qzfVTNbm8NRpy0WEnjGp0MlUNngu816Wjy~c51S2eKJG~ggSkJSMFnFGbf7gzDZY8yJ9fMNZiHA~TKDVmtTZvqviZviZpUFL1Q--.jpg","https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuJ6zzu8WBYCV~jAxxul6FofsUuRLT8Mvvs9b8Y7pKbd_BNoJDd2Okb74iVdOt_0zdC62z~I6VoTfF0FnLjP1Tu13JYaYUPb198xEYc~R96EowXyk~x_JD1zgw_3fjzpE2~gXUEoD63~PNXGgi3iCbmb9Wx1~Tgype6k8yJU2up93NXi_dFLp1SJNugHYgVcp2x_~~dWfmiKzlrV6XkyYCI9A--.jpg","https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuJ4RXTuprYkN~QmhjaZO6fskCIAQglXTUesHTFlAkrQs9xca3TVWvOUusZ14ZL7AG3iz6LLjZpSbEhOGUDI4MQRzN33BojFqXN0D2qWTgADj6qFryi6akUUqnfS~RPrsL5q2ycvPmYAFIM4fVGv9SndAdue~2P3jOb1AzNE2G~8S~SGO9OFhfSii9xtPK2s_GoY2eczTh_DztKCS__m_mF9w--.jpg","8 allée de la nature 06000 NICE","Villa toute neuve, construction finie, avec vue panoramique sur la mer à Paraiso Alto, Benahavis. Emplacement privilégié sur le New Golden Mile, à proximité des terrains de golf et à quelques minutes en voiture des plages, de Puerto Banús et de Marbella.
+VALUES ("Domaine du lac", "12345", "https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuOdXad5Jpt0YFJ~Dqx8xEepk0k_hkiGic5lTybUHjlf1FhydqGnTGEBMwQJ0sU_jrXdUhAjuWm8YeOfPxrLANEzm2~hmlQmerMLpc1Q5YmGC4ypB0dINX86r85R3fRtbnQmJWbfkhx_FPiino_lxrCew_YcHQ~o0fdS6YGR_kQusaadf7h7zlESof744NH__vJ3mh6FeNuwGeoSNYyd8SWJg--.jpg", "https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuPjl0WarhTbYEZfeLQo6aO1rG0HF_j58YGMe4_epDLps0rSzmIdB_V_WTtbUIKWBUuoF3z3oXUCW1stePQrRJtC1R9jTzgowQgdFrOHT5JSBtNBRL~WABZ~Esq9iyFJzX79wMJ12kec6Vquq5Qz8Y1Ot_v4liMDl9xl4QsrK4wqI_3olJF4Zp~W7Cg5qm9XHsOKCzXNvnWhxEcx2jKgwQTig--.jpg","https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuKVN2o8NbCrPjHP9bY2WClQ~XKELYGUypBapLQAU50p_V8p1vQlzwUyrgUUkgW9woF9HzbRjJVqSX16d7tFJ7bTPk9DaPB~2rRWPxEjmOxQyw1m4GU9Fl7qzfVTNbm8NRpy0WEnjGp0MlUNngu816Wjy~c51S2eKJG~ggSkJSMFnFGbf7gzDZY8yJ9fMNZiHA~TKDVmtTZvqviZviZpUFL1Q--.jpg","https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuJ6zzu8WBYCV~jAxxul6FofsUuRLT8Mvvs9b8Y7pKbd_BNoJDd2Okb74iVdOt_0zdC62z~I6VoTfF0FnLjP1Tu13JYaYUPb198xEYc~R96EowXyk~x_JD1zgw_3fjzpE2~gXUEoD63~PNXGgi3iCbmb9Wx1~Tgype6k8yJU2up93NXi_dFLp1SJNugHYgVcp2x_~~dWfmiKzlrV6XkyYCI9A--.jpg","https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuJ4RXTuprYkN~QmhjaZO6fskCIAQglXTUesHTFlAkrQs9xca3TVWvOUusZ14ZL7AG3iz6LLjZpSbEhOGUDI4MQRzN33BojFqXN0D2qWTgADj6qFryi6akUUqnfS~RPrsL5q2ycvPmYAFIM4fVGv9SndAdue~2P3jOb1AzNE2G~8S~SGO9OFhfSii9xtPK2s_GoY2eczTh_DztKCS__m_mF9w--.jpg","8 allée de la nature 06000 NICE","Villa toute neuve, construction finie, avec vue panoramique sur la mer à Paraiso Alto, Benahavis. Emplacement privilégié sur le New Golden Mile, à proximité des terrains de golf et à quelques minutes en voiture des plages, de Puerto Banús et de Marbella.
 
 Ce chef-d'œuvre de design et d’architecture offre à la fois intimité et une incroyable vue panoramique sur la mer depuis tous les étages, y compris le sous-sol.
 
@@ -85,7 +100,7 @@ Ecole bilingue : moins de 5 minutes en voiture.
 Estepona : 7 minutes en voiture.Vous souhaitez visiter cette résidence ?", "2024-09-12");
 
 INSERT INTO home (name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, disponibilite)
-VALUES ("abcd", "13456", "https://storage.googleapis.com/static.inmoweb.es/clients/2308/property/894450/image/golden-7--drumelia-exclusive-4.jpg","https://storage.googleapis.com/static.inmoweb.es/clients/2308/property/894450/image/golden-7--drumelia-exclusive-13.jpg","https://storage.googleapis.com/static.inmoweb.es/clients/2308/property/894450/image/golden-7--drumelia-exclusive-11.jpg","https://storage.googleapis.com/static.inmoweb.es/clients/2308/property/894450/image/golden-7--drumelia-exclusive-9.jpg","https://storage.googleapis.com/static.inmoweb.es/clients/2308/property/894450/image/golden-7--drumelia-exclusive-6.jpg","8 allée de la nature 06000 NICE","Villa de luxe à Marbella, vente
+VALUES ("Domaine ensoillé", "13456", "https://storage.googleapis.com/static.inmoweb.es/clients/2308/property/894450/image/golden-7--drumelia-exclusive-4.jpg","https://storage.googleapis.com/static.inmoweb.es/clients/2308/property/894450/image/golden-7--drumelia-exclusive-13.jpg","https://storage.googleapis.com/static.inmoweb.es/clients/2308/property/894450/image/golden-7--drumelia-exclusive-11.jpg","https://storage.googleapis.com/static.inmoweb.es/clients/2308/property/894450/image/golden-7--drumelia-exclusive-9.jpg","https://storage.googleapis.com/static.inmoweb.es/clients/2308/property/894450/image/golden-7--drumelia-exclusive-6.jpg","8 allée de la nature 06000 NICE","Villa de luxe à Marbella, vente
 VILLA DE LUXE À NICE, VENTE
 Prix: 3.786.200€
  Surface habitable 609 m²  Surface du terrain 1120 m²  Chambres 6  Salles de bain 6
@@ -107,7 +122,7 @@ L'autoroute AP-7 est facilement accessible.
 La vieille ville de Nice, le glamour de Puerto Banús, la vallée du golf sont à quelques minutes.Vous souhaitez visiter cette résidence ?", "2024-08-10");
 
 INSERT INTO home (name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, disponibilite)
-VALUES("ABCED", "12456", "https://rbplace.com/wp-content/uploads/2022/05/villa_finestrat_gm_36414.jpg", "https://rbplace.com/wp-content/uploads/2022/05/gm_36414-3.jpg", "https://rbplace.com/wp-content/uploads/2022/05/gm_36414-3.jpg", "https://rbplace.com/wp-content/uploads/2022/05/gm_36414-5.jpg","https://rbplace.com/wp-content/uploads/2022/05/gm_36414-2.jpg","8 allée de la nature 06000 NICE","
+VALUES("Domaine du soleil", "12456", "https://rbplace.com/wp-content/uploads/2022/05/villa_finestrat_gm_36414.jpg", "https://rbplace.com/wp-content/uploads/2022/05/gm_36414-3.jpg", "https://rbplace.com/wp-content/uploads/2022/05/gm_36414-3.jpg", "https://rbplace.com/wp-content/uploads/2022/05/gm_36414-5.jpg","https://rbplace.com/wp-content/uploads/2022/05/gm_36414-2.jpg","8 allée de la nature 06000 NICE","
 Campana Garden est un complexe résidentiel composé de différents types de maisons, dans lequel chaque maison est conçue pour tirer le meilleur parti de l’espace. Situé à Finestrat, Campana Garden propose des bungalows, des maisons mitoyennes et des villas de style moderne, avec d’excellentes qualités et des vues sur les toits de Benidorm.
 
 Residencial Campana Bay est composé d’un bungalow, au rez-de-chaussée avec jardin, ou au dernier étage avec solarium. Toutes les maisons sont équipées de conduits d’aération et d’une cuisine équipée intégrée dans le séjour. Parmi ses espaces communs, plusieurs jardins avec piscine et terrains de sport se distinguent.
@@ -124,7 +139,7 @@ Les Villas Orange, pour leur part, ont de grands terrains et une distribution su
 Vous souhaitez visiter cette résidence ? ","2024-12-08");
 
 INSERT INTO home (name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, disponibilite)
-VALUES ("Domaine étoilé", "12356","https://rbplace.com/immobilier/domaine-etoile-villa-a-vendre-mijas/","https://rbplace.com/wp-content/uploads/2023/09/domaine_etoile-1.jpg","https://rbplace.com/wp-content/uploads/2022/07/gm_36405-2.jpg","https://rbplace.com/wp-content/uploads/2023/06/gm_36407-4.jpg","https://rbplace.com/wp-content/uploads/2023/06/gm_36407-1.jpg","8 allée de la nature 06000 NICE","maginez-vous réveiller chaque matin avec le doux murmure de la mer Méditerranée. Bienvenue au Domaine Étoilé, un havre de paix où la mer rencontre le ciel. Situé sur la magnifique Costa del Sol en Espagne, ce programme de villas est un véritable bijou.
+VALUES ("Domaine étoilé", "12356","https://rbplace.com/wp-content/uploads/2023/09/villa_domaine_etoile_mijas.jpg","https://rbplace.com/wp-content/uploads/2023/09/domaine_etoile-1.jpg","https://rbplace.com/wp-content/uploads/2022/07/gm_36405-2.jpg","https://rbplace.com/wp-content/uploads/2023/06/gm_36407-4.jpg","https://rbplace.com/wp-content/uploads/2023/06/gm_36407-1.jpg","8 allée de la nature 06000 NICE","maginez-vous réveiller chaque matin avec le doux murmure de la mer Méditerranée. Bienvenue au Domaine Étoilé, un havre de paix où la mer rencontre le ciel. Situé sur la magnifique Costa del Sol en Espagne, ce programme de villas est un véritable bijou.
 
 Nouvelle Construction : Prix à partir de 1’490,000 à € 1’690,000 €. [Lits : 3 – 3] [Bains : 3 – 3] [surface construite : 296.00 m² – m² 340.00]
 
@@ -161,7 +176,39 @@ Au Domaine Étoilé, chaque jour est une invitation à vivre le rêve méditerra
 
 
 
+INSERT INTO sale (name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, disponibilite,id_home )
+VALUES ("Domaine de la lune", "AHBGF","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1586/Photos00058.jpg?width=1440&q=65&func=crop","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1600/Photos00086.jpg?width=562&height=348&q=65", "https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1577/Photos00030.jpg?width=1440&q=65","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1586/Photos00058.jpg?width=1440&q=65&func=crop","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1603/Photos00093.jpg?width=1440&q=65","8 rue de la lune, Saint tropez", "Domaine de la lune
 
+Saint tropez,
+Côte d'Azur,
+France
+14 voyageurs·7 chambres·7 salles de bain·500 m²
+Tout en verre et en béton, la villa Hanoï se dresse au milieu d’un immense terrain au gazon parfaitement taillé. Sur la terrasse qui fait face à la mer, les parasols design et les transats rose chamallow rappellent les hôtels d’Ocean Drive. A l’intérieur, l’espace entièrement vitré et les murs immaculés mettent en valeur la décoration épurée, subtilement twistée par les meubles de designers, les touches de couleurs pop et la lumière des néons. Dans le salon, la table rose bonbon et un tableau d’art contemporain multicolore apportent du peps à la cuisine minimaliste. Des tapis turquoise, fuchsia ou vert pomme réchauffent le sol en béton ciré gris perle des chambres. 
+
+Depuis la villa, on n’a que quelques pas à faire pour accéder au très select Nikki Beach Club, accessible par voie privée. On peut aussi remonter jusqu’à Tahiti Beach, pour aller déguster un mojito les pieds dans le sable sur la terrasse colorée du Moorea. Le soir venu, on regagne la villa et on va faire quelques longueurs dans la piscine, avec une vue imprenable sur la Méditerranée, pendant que les enfants jouent à cache-cache dans les champs d’oliviers. 
+","2024-10-15",1);
+INSERT INTO sale (name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, disponibilite, id_home )
+VALUES ("Domaine de la constallion", "AHBGF","https://cdn.lecollectionist.com/__lecollectionist__/production/houses/5467/photos/fm2WvoJRbWJYKGAua0lg_57e31ab5-7862-43f2-d9e6-b75de57559ee.jpg?width=1440&q=65&func=crop","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/house-5467/2022-03-11-b2d8eb3b2b8a253a2827310c6523befa.jpeg?width=1140&height=400&q=65", "https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/house-5467/2022-03-11-f6749106f1b8a85d15bb7cdca44be8d9.jpeg?width=562&height=348&q=65","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/house-5467/2022-03-11-b81fbb844f590e8928603c336531ba88.jpeg?width=562&height=348&q=65","https://www.lecollectionist.com/fr/location-luxe/villa-maestra-presqu-ile-saint-tropez/photos","8 rue de la lune, Saint tropez", "Villa Maestra 
+
+Presqu'ile Saint-Tropez,
+Côte d'Azur,
+France
+18 voyageurs·7 chambres·8 salles de bain·600 m²
+Propriété contemporaine construite en 2017, implantée sur la commune de St-Tropez, dans le quartier de la Pierre Plantée, dans un secteur calme et recherché surplombant la baie des Cannoubiers.
+À cinq minutes en voiture du Port et de la Place des Lices avec accès facile aux Plages.
+Terrain plat d’une superficie de 2200 m2, surplombant les vignes avec vue mer au premier étage.
+Elle se compose de 8 chambres.","2024-10-15",3);
+INSERT INTO sale (name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, disponibilite, id_home )
+VALUES ("Domaine de la lune", "AHBGF","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1586/Photos00058.jpg?width=1440&q=65&func=crop","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1600/Photos00086.jpg?width=562&height=348&q=65", "https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1577/Photos00030.jpg?width=1440&q=65","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1586/Photos00058.jpg?width=1440&q=65&func=crop","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1603/Photos00093.jpg?width=1440&q=65","8 rue de la lune, Saint tropez", "Domaine de la lune
+
+Saint tropez,
+Côte d'Azur,
+France
+14 voyageurs·7 chambres·7 salles de bain·500 m²
+Tout en verre et en béton, la villa Hanoï se dresse au milieu d’un immense terrain au gazon parfaitement taillé. Sur la terrasse qui fait face à la mer, les parasols design et les transats rose chamallow rappellent les hôtels d’Ocean Drive. A l’intérieur, l’espace entièrement vitré et les murs immaculés mettent en valeur la décoration épurée, subtilement twistée par les meubles de designers, les touches de couleurs pop et la lumière des néons. Dans le salon, la table rose bonbon et un tableau d’art contemporain multicolore apportent du peps à la cuisine minimaliste. Des tapis turquoise, fuchsia ou vert pomme réchauffent le sol en béton ciré gris perle des chambres. 
+
+Depuis la villa, on n’a que quelques pas à faire pour accéder au très select Nikki Beach Club, accessible par voie privée. On peut aussi remonter jusqu’à Tahiti Beach, pour aller déguster un mojito les pieds dans le sable sur la terrasse colorée du Moorea. Le soir venu, on regagne la villa et on va faire quelques longueurs dans la piscine, avec une vue imprenable sur la Méditerranée, pendant que les enfants jouent à cache-cache dans les champs d’oliviers. 
+","2024-10-15",2);
 
 
 
