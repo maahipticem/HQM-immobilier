@@ -50,6 +50,15 @@ CREATE TABLE sale(
   CONSTRAINT fk_sale_home Foreign Key (id_home) REFERENCES home(id)
 );
 
+CREATE TABLE user(
+  id int unsigned primary key auto_increment not null,
+  email VARCHAR(255) NOT NULL,
+  haspassword VARCHAR(255) NOT NULL
+
+
+);
+
+
 
 INSERT INTO home (name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, disponibilite)
 VALUES ("Domaine du lac", "12345", "https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuOdXad5Jpt0YFJ~Dqx8xEepk0k_hkiGic5lTybUHjlf1FhydqGnTGEBMwQJ0sU_jrXdUhAjuWm8YeOfPxrLANEzm2~hmlQmerMLpc1Q5YmGC4ypB0dINX86r85R3fRtbnQmJWbfkhx_FPiino_lxrCew_YcHQ~o0fdS6YGR_kQusaadf7h7zlESof744NH__vJ3mh6FeNuwGeoSNYyd8SWJg--.jpg", "https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuPjl0WarhTbYEZfeLQo6aO1rG0HF_j58YGMe4_epDLps0rSzmIdB_V_WTtbUIKWBUuoF3z3oXUCW1stePQrRJtC1R9jTzgowQgdFrOHT5JSBtNBRL~WABZ~Esq9iyFJzX79wMJ12kec6Vquq5Qz8Y1Ot_v4liMDl9xl4QsrK4wqI_3olJF4Zp~W7Cg5qm9XHsOKCzXNvnWhxEcx2jKgwQTig--.jpg","https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuKVN2o8NbCrPjHP9bY2WClQ~XKELYGUypBapLQAU50p_V8p1vQlzwUyrgUUkgW9woF9HzbRjJVqSX16d7tFJ7bTPk9DaPB~2rRWPxEjmOxQyw1m4GU9Fl7qzfVTNbm8NRpy0WEnjGp0MlUNngu816Wjy~c51S2eKJG~ggSkJSMFnFGbf7gzDZY8yJ9fMNZiHA~TKDVmtTZvqviZviZpUFL1Q--.jpg","https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuJ6zzu8WBYCV~jAxxul6FofsUuRLT8Mvvs9b8Y7pKbd_BNoJDd2Okb74iVdOt_0zdC62z~I6VoTfF0FnLjP1Tu13JYaYUPb198xEYc~R96EowXyk~x_JD1zgw_3fjzpE2~gXUEoD63~PNXGgi3iCbmb9Wx1~Tgype6k8yJU2up93NXi_dFLp1SJNugHYgVcp2x_~~dWfmiKzlrV6XkyYCI9A--.jpg","https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPScJf~MQeTIWIvX1s_P0QuJ4RXTuprYkN~QmhjaZO6fskCIAQglXTUesHTFlAkrQs9xca3TVWvOUusZ14ZL7AG3iz6LLjZpSbEhOGUDI4MQRzN33BojFqXN0D2qWTgADj6qFryi6akUUqnfS~RPrsL5q2ycvPmYAFIM4fVGv9SndAdue~2P3jOb1AzNE2G~8S~SGO9OFhfSii9xtPK2s_GoY2eczTh_DztKCS__m_mF9w--.jpg","8 allée de la nature 06000 NICE","Villa toute neuve, construction finie, avec vue panoramique sur la mer à Paraiso Alto, Benahavis. Emplacement privilégié sur le New Golden Mile, à proximité des terrains de golf et à quelques minutes en voiture des plages, de Puerto Banús et de Marbella.
@@ -211,7 +220,8 @@ Depuis la villa, on n’a que quelques pas à faire pour accéder au très selec
 ","2024-10-15",2);
 
 
-
+insert into user(email, haspassword)
+VALUES ("andre@gmail.com", "123456");
 
 
 
