@@ -1,0 +1,9 @@
+.containerSaleApp {
+  box-shadow: 6px 16px 36px 13px rgb(0 0 0 / 29%);
+  -webkit-box-shadow: 6px 16px 36px 13px rgb(0 0 0 / 29%);
+  -moz-box-shadow: 6px 16px 36px 13px rgba(0, 0, 0, 0.29);
+}
+
+.imageSale {
+  float: left;
+}

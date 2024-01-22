@@ -1,15 +1,16 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useRef } from "react";
 
 import Navbar from "./components/Navbar";
-import RentCard from "./components/RentCard";
-import SaleCard from "./components/SaleCard";
+// import RentCard from "./components/RentCard";
+// import SaleCard from "./components/SaleCard";
 import Formulaire from "./components/Formulaire";
+
 import "./App.css";
 
 function App() {
-  const apps = useLoaderData();
-  const rents = useLoaderData();
+  // const apps = useLoaderData();
+  // const rents = useLoaderData();
   const louerRef = useRef();
   const vendreRef = useRef();
   const contactRef = useRef();
@@ -28,20 +29,16 @@ function App() {
 
   return (
     <div>
-      <section>
-        <div className="entrée">
-          <div className="position">
-            <Navbar
-              onLouerClick={scrollToLouer}
-              onVendreClick={scrollToVendre}
-              onContactClick={scrollToContact}
-            />
-            <img
-              className="image"
-              src="https://img.freepik.com/premium-photo/house-with-pool-yard-house-with-large-window-white-house_625492-4913.jpg"
-              alt="villa"
-            />
-
+      <div className="background">
+        <Navbar
+          onLouerClick={scrollToLouer}
+          onVendreClick={scrollToVendre}
+          onContactClick={scrollToContact}
+        />
+      </div>
+      <main className="main">
+        <section>
+          <div className="hero">
             <div className="presentation">
               <h1>La beauté n'est plus un luxe.</h1>
               <p>
@@ -51,9 +48,16 @@ function App() {
                 propriétés rustiques.
               </p>
             </div>
+            <div className="selection">
+              <Link to="/homes" className="buttonApp">
+                <button className="button" type="button">
+                  Découvrir notre sélection
+                </button>
+              </Link>
+            </div>
           </div>
-        </div>
-        <section ref={vendreRef}>
+        </section>
+        {/* <section ref={vendreRef}>
           <div>
             <div>
               <h2>vendre</h2>
@@ -71,7 +75,7 @@ function App() {
               </Link>
             </div>
           </div>
-        </section>
+        
       </section>
       <section className="containerSale" ref={louerRef}>
         <div className="location">
@@ -97,11 +101,17 @@ function App() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section ref={contactRef}>
-        <Formulaire />
-      </section>
+        <section ref={contactRef}>
+          <Formulaire />
+        </section>
+        {/* <section>
+          <Link to="/nouvelutilisateur" className="buttonApp">
+            <button>signup</button>
+          </Link>
+        </section> */}
+      </main>
     </div>
   );
 }

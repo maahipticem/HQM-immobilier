@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 function Navbar({ onLouerClick, onVendreClick, onContactClick }) {
   return (
-    <div className="nav">
+    <nav className="nav">
       <div>
         <Title />
       </div>
@@ -31,7 +31,7 @@ function Navbar({ onLouerClick, onVendreClick, onContactClick }) {
           Contact
         </button>
       </div>
-    </div>
+    </nav>
   );
 }
 

@@ -1,10 +1,10 @@
 const AbstractManager = require("./AbstractManager");
 
-class HomeManager extends AbstractManager {
+class SigninManager extends AbstractManager {
   constructor() {
     // Call the constructor of the parent class (AbstractManager)
     // and pass the table name "item" as configuration
-    super({ table: "home" });
+    super({ table: "user" });
   }
 
   // The C of CRUD - Create operation
@@ -22,16 +22,16 @@ class HomeManager extends AbstractManager {
 
   // The Rs of CRUD - Read operations
 
-  // async read(id) {
-  //   // Execute the SQL SELECT query to retrieve a specific item by its ID
-  //   const [rows] = await this.database.query(
-  //     `select home.id, home.name, home.numeroOffre, home.imageToUrl, home.imageToUrl2, sal.home_id, sale.name, sale.numeroOffre, sale.imageToUrl, sale.imageToUrl2, from ${this.table} inner join sale on sale.home_id = ${this.table}.id where ${this.table}.id = ?`,
-  //     [id]
-  //   );
+  async read(id) {
+    // Execute the SQL SELECT query to retrieve a specific item by its ID
+    const [rows] = await this.database.query(
+      `select * from ${this.table} where id = ?`,
+      [id]
+    );
 
-  //   // Return the first row of the result, which represents the item
-  //   return rows[0];
-  // }
+    // Return the first row of the result, which represents the item
+    return rows[0];
+  }
 
   async readAll() {
     // Execute the SQL SELECT query to retrieve all items from the "item" table
@@ -56,4 +56,4 @@ class HomeManager extends AbstractManager {
   // }
 }
 
-module.exports = HomeManager;
+module.exports = SigninManager;

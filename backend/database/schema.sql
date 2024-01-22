@@ -52,8 +52,8 @@ CREATE TABLE sale(
 
 CREATE TABLE user(
   id int unsigned primary key auto_increment not null,
-  email VARCHAR(255) NOT NULL,
-  haspassword VARCHAR(255) NOT NULL
+  email VARCHAR(255) NOT NULL UNIQUE,
+  hashpassword VARCHAR(255) NOT NULL
 
 
 );
@@ -220,7 +220,7 @@ Depuis la villa, on n’a que quelques pas à faire pour accéder au très selec
 ","2024-10-15",2);
 
 
-insert into user(email, haspassword)
+insert into user(email, hashpassword)
 VALUES ("andre@gmail.com", "123456");
 
 

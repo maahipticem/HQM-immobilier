@@ -2,7 +2,36 @@ body {
   margin: 0;
   background-color: EBE3DB;
 }
+.background {
+  pointer-events: none;
+  background-image: url("https://img.freepik.com/premium-photo/house-with-pool-yard-house-with-large-window-white-house_625492-4913.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+}
 
+.main {
+  /* display: flex;
+  flex-direction: column; */
+  position: absolute;
+  top: 0;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+  margin: 0 10%;
+}
+
+.hero {
+  width: 50%;
+  margin-top: 20%;
+  margin-left: 30%;
+}
 .title {
   text-align: center;
 }
@@ -16,7 +45,7 @@ button {
   font-size: calc(10px + 2vmin);
   color: white;
   text-align: center;
-  background-color: #a79b90;
+  background-color: rgb(167, 155, 144);
 }
 
 .location {
@@ -26,23 +55,19 @@ button {
 .presentation {
   font-size: 30px;
   color: black;
-  top: 20vh;
+  top: 5vh;
   left: 110vh;
   font-weight: bolder;
-  position: absolute;
   font-family: Libre Baskerville;
   right: 20vh;
   border: solid white;
+
+  margin-bottom: 30%;
+  box-shadow: 6px 16px 36px 13px rgb(0 0 0 / 29%);
+  -webkit-box-shadow: 6px 16px 36px 13px rgb(0 0 0 / 29%);
+  -moz-box-shadow: 6px 16px 36px 13px rgba(0, 0, 0, 0.29);
 }
 
-.position {
-  position: relative;
-}
-
-.image {
-  height: 100vh;
-  width: 100vw;
-}
 .saleApp {
   padding: 0;
 }

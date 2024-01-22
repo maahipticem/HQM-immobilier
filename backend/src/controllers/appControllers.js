@@ -5,10 +5,10 @@ const tables = require("../tables");
 const browse = async (req, res, next) => {
   try {
     // Fetch all items from the database
-    const homes = await tables.home.readAll();
+    const sales = await tables.sale.readAll();
 
     // Respond with the items in JSON format
-    res.json(homes);
+    res.json(sales);
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);
@@ -19,14 +19,14 @@ const browse = async (req, res, next) => {
 const read = async (req, res, next) => {
   try {
     // Fetch a specific item from the database based on the provided ID
-    const homes = await tables.home.read(req.params.id);
+    const sale = await tables.sale.read(req.params.id);
 
     // If the item is not found, respond with HTTP 404 (Not Found)
     // Otherwise, respond with the item in JSON format
-    if (homes == null) {
+    if (sale == null) {
       res.sendStatus(404);
     } else {
-      res.json(homes);
+      res.json(sale);
     }
   } catch (err) {
     // Pass any errors to the error-handling middleware

@@ -11,16 +11,25 @@
   z-index: 1;
   gap: 100px;
   font-family: Public Sans;
+  padding-left: 2rem;
 }
 .paragrapheNavbar {
-  margin-right: 100px;
   font-size: 20px;
-
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   box-shadow: 6px 16px 36px 13px rgb(0 0 0 / 29%);
   -webkit-box-shadow: 6px 16px 36px 13px rgb(0 0 0 / 29%);
   -moz-box-shadow: 6px 16px 36px 13px rgba(0, 0, 0, 0.29);
+  cursor: pointer;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
 }
 
+.paragrapheNavbars:hover {
+  background-color: rgba(167, 155, 144, 0.7);
+}
 @media screen and (min-width: 1482px) {
   .navbar {
     display: flex;
