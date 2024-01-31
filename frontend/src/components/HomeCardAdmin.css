@@ -1,0 +1,16 @@
+.container-button {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+
+.homeImage {
+  flex-direction: column;
+  gap: 10px;
+  grid-template-columns: auto;
+  align-items: stretch;
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

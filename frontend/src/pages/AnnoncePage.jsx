@@ -28,7 +28,7 @@ function AnnoncePage() {
   const postAnnonce = async (event) => {
     event.preventDefault();
     try {
-      await connexion.post("/annonces", annonce);
+      await connexion.post("/homes", annonce);
       setIsSubmissionSuccessful(true);
       setAnnonce(annonceType);
     } catch (error) {

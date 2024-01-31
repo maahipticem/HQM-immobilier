@@ -7,15 +7,12 @@ const HomeManager = require("./models/HomeManager");
 const ItemManager = require("./models/ItemManager");
 const AppManager = require("./models/AppManager");
 const UserManager = require("./models/UserManager");
-const AnnonceManager = require("./models/AnnonceManager");
 
 const managers = [
   ItemManager,
   HomeManager,
   AppManager,
   UserManager,
-  AnnonceManager,
-
   // Add other managers here
 ];
 

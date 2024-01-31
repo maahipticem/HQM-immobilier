@@ -12,7 +12,7 @@ import LoginPage from "./pages/LoginPage";
 import connexion from "./services/connexion";
 import Administration from "./pages/Administration";
 import AnnoncePage from "./pages/AnnoncePage";
-import DashbordPage from "./pages/DashbordPage";
+import DashboardPage from "./pages/DashboardPage";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <DashbordPage />,
+        element: <DashboardPage />,
       },
       {
         path: "annonces",

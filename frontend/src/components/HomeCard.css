@@ -44,7 +44,7 @@ li.thumb.selected {
 .carousel {
   width: 60%;
   height: 500px;
-  margin: 10px;
+  margin: auto;
   flex-direction: row;
 }
 @media (max-width: 768px) {

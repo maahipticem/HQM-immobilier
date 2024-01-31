@@ -31,18 +31,19 @@ class HomeManager extends AbstractManager {
     return result.insertId;
   }
 
-  // The Rs of CRUD - Read operations
+  //  The Rs of CRUD - Read operations
 
-  // async read(id) {
-  //   // Execute the SQL SELECT query to retrieve a specific item by its ID
-  //   const [rows] = await this.database.query(
-  //     `select home.id, home.name, home.numeroOffre, home.imageToUrl, home.imageToUrl2, sal.home_id, sale.name, sale.numeroOffre, sale.imageToUrl, sale.imageToUrl2, from ${this.table} inner join sale on sale.home_id = ${this.table}.id where ${this.table}.id = ?`,
-  //     [id]
-  //   );
+  async read(id) {
+    //   // Execute the SQL SELECT query to retrieve a specific item by its ID
+    const [rows] = await this.database.query(
+      `select home.id, home.name, home.numeroOffre, home.imageToUrl, home.imageToUrl2,city.city, city.id_home from ${this.table} inner join city on city.id_home = ${this.table}.id where ${this.table}.id = ?`,
+      [id]
+    );
 
-  //   // Return the first row of the result, which represents the item
-  //   return rows[0];
-  // }
+    //   // Return the first row of the result, which represents the item
+
+    return rows[0];
+  }
 
   async readAll() {
     // Execute the SQL SELECT query to retrieve all items from the "item" table
@@ -62,9 +63,15 @@ class HomeManager extends AbstractManager {
   // The D of CRUD - Delete operation
   // TODO: Implement the delete operation to remove an item by its ID
 
-  // async delete(id) {
-  //   ...
-  // }
+  async delete(id) {
+    const result = await this.database.query(
+      `DELETE FROM ${this.table} WHERE id = ?`,
+      [id]
+    );
+
+    // Return the first row of the result, which represents the user
+    return result;
+  }
 }
 
 module.exports = HomeManager;

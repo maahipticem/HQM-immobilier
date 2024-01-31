@@ -9,32 +9,47 @@ function HomeCard({ home }) {
     <div className="homeImage">
       <Carousel className="carousel">
         <div className="carouselImage">
-          <h2>{home.name}</h2>
+          <Link to="/">
+            <h2>{home.name}</h2>
+          </Link>
           <img className="logoImage" src={home.imageToUrl} alt="Slide 1" />
         </div>
         <div>
+          <Link to="/">
+            <h2>{home.name}</h2>
+          </Link>
           <img className="logoImage" src={home.imageToUrl2} alt="Slide 2" />
         </div>
         <div>
+          <Link to="/">
+            <h2>{home.name}</h2>
+          </Link>
           <img className="logoImage" src={home.imageToUrl3} alt="Slide 3" />
         </div>
         <div>
+          <Link to="/">
+            <h2>{home.name}</h2>
+          </Link>
           <img className="logoImage" src={home.imageToUrl4} alt="Slide 4" />
         </div>
         <div>
+          <Link to="/">
+            <h2>{home.name}</h2>
+          </Link>
           <img className="logoImage" src={home.imageToUrl5} alt="Slide 5" />
         </div>
       </Carousel>
-      <div className="homeDescriptif">
+
+      {/* <div className="homeDescriptif">
         <p>{home.descriptif}</p>
-      </div>
-      <div>
-        <Link to="/">
+      </div> */}
+      {/* <div>
+        
           <button className="button" type="button">
             Plus de renseignements
-          </button>
-        </Link>
-      </div>
+          </button> */}
+
+      {/* </div> */}
     </div>
   );
 }
