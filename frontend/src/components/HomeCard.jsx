@@ -39,37 +39,8 @@ function HomeCard({ home }) {
           <img className="logoImage" src={home.imageToUrl5} alt="Slide 5" />
         </div>
       </Carousel>
-
-      {/* <div className="homeDescriptif">
-        <p>{home.descriptif}</p>
-      </div> */}
-      {/* <div>
-        
-          <button className="button" type="button">
-            Plus de renseignements
-          </button> */}
-
-      {/* </div> */}
     </div>
   );
 }
-
-// function HomeCard({ home }) {
-//   return (
-//     <div>
-//       <div className="homeImage">
-//         <div>
-//           <img className="logoImage" src={home.imageToUrl} alt={home.name} />
-//         </div>
-//         <div className="homeDescriptif">
-//           <p>{home.name}</p>
-//           <p>{home.disponibilite}</p>
-
-//           <button type="button">Plus de details</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 
 export default HomeCard;
