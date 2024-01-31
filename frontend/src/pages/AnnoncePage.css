@@ -1,4 +1,21 @@
 .form-alllabel {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  align-items: baseline;
+}
+
+.titleAdmin {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 50px;
+}
+
+.label-form {
+  margin-left: 10px;
+  border-color: #a79b90;
+}
+
+.connection-button {
+  text-align: center;
 }

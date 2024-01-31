@@ -6,7 +6,9 @@ import NavbarAdmin from "../components/NavbarAdmin";
 function Administration() {
   return (
     <div>
-      <NavbarAdmin />
+      <div className="navigation">
+        <NavbarAdmin />
+      </div>
       <Outlet />
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Navigate, Link } from "react-router-dom";
 
 import { AuthContext } from "../contexts/Auth";
+import "./NavbarAdmin.css";
 
 function NavbarAdmin() {
   const { connected, setConnected } = useContext(AuthContext);

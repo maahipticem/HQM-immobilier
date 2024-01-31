@@ -37,7 +37,7 @@ function AnnoncePage() {
   };
   return (
     <div>
-      <h2>Administration d'une annonce</h2>
+      <h2 className="titleAdmin">Ajout d'une annonce</h2>
       {isSubmissionSuccessful && (
         <p>Votre annonce a été envoyée avec succès.</p>
       )}
@@ -45,7 +45,7 @@ function AnnoncePage() {
         <div className="form-container">
           <form className="form-connection" onSubmit={postAnnonce}>
             <div className="form-alllabel">
-              <label>
+              <label className="form-label">
                 Titre
                 <input
                   type="text"
