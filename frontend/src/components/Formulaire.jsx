@@ -62,8 +62,11 @@ function Formulaire() {
     <div id="idFormulaire" className="formulaire">
       <p>{sendMessage}</p>
       <form className="contact" onSubmit={sendEmail}>
-        <h3 className="titleContact">Contact</h3>
-
+        <h3 className="titleContact">Nous contacter</h3>
+        <p className="paragrapheContact">
+          Nos équipes sont à votre disposition pour répondre à vos demandes dans
+          les meilleurs délais.
+        </p>
         <label htmlFor="name" className="label">
           Prénom
           <input

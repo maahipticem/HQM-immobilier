@@ -33,11 +33,11 @@
 @media screen and (min-width: 1482px) {
   .navbar {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     color: white;
     justify-content: flex-end;
     position: absolute;
-    left: 100vh;
+
     top: 5vh;
   }
 

@@ -3,7 +3,6 @@ body {
   background-color: EBE3DB;
 }
 .background {
-  pointer-events: none;
   background-image: url("https://img.freepik.com/premium-photo/house-with-pool-yard-house-with-large-window-white-house_625492-4913.jpg");
   background-position: center;
   background-repeat: no-repeat;

@@ -1,19 +1,13 @@
-import React, { useContext } from "react";
-import { Navigate, Link } from "react-router-dom";
-import { AuthContext } from "../contexts/Auth";
+import React from "react";
+import { Outlet } from "react-router-dom";
+
+import NavbarAdmin from "../components/NavbarAdmin";
 
 function Administration() {
-  const { connected } = useContext(AuthContext);
-  if (connected !== "connected") {
-    return <Navigate to="/" replace />;
-  }
   return (
     <div>
-      <nav className="navigation">
-        <Link to="/">Home</Link>
-        <Link to="/administration">Dashbaord</Link>
-        <Link to="/administration/annonce">Annonce</Link>
-      </nav>
+      <NavbarAdmin />
+      <Outlet />
     </div>
   );
 }

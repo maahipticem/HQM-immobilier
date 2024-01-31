@@ -29,14 +29,14 @@ function App() {
 
   return (
     <div>
-      <div className="background">
+      <div className="background" />
+      <main className="main">
         <Navbar
           onLouerClick={scrollToLouer}
           onVendreClick={scrollToVendre}
           onContactClick={scrollToContact}
         />
-      </div>
-      <main className="main">
+
         <section>
           <div className="hero">
             <div className="presentation">

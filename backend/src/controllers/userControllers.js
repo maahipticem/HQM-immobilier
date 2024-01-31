@@ -1,6 +1,8 @@
 // Import access to database tables
 const argon2 = require("argon2");
 const tables = require("../tables");
+const { verify } = require("../services/hash");
+const { createToken } = require("../services/jwt");
 
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
@@ -17,17 +19,26 @@ const browse = async (req, res, next) => {
 };
 
 // The R of BREAD - Read operation
-const read = async (req, res, next) => {
+const login = async (req, res, next) => {
   try {
     // Fetch a specific user from the database based on the provided ID
-    const user = await tables.user.read(req.params.id);
+    const user = await tables.user.read(req.body.email);
 
     // If the user is not found, respond with HTTP 404 (Not Found)
     // Otherwise, respond with the user in JSON format
     if (user == null) {
-      res.sendStatus(404);
+      res.sendStatus(403);
     } else {
-      res.json(user);
+      const check = await verify(req.body.hashpassword, user.hashpassword);
+      if (check) {
+        delete user.password;
+        res.cookie("auth", createToken(user), { httpOnly: true });
+        res
+          .status(200)
+          .json({ id: user.id, email: user.email, role: user.role });
+      } else {
+        res.sendStatus(user);
+      }
     }
   } catch (err) {
     // Pass any errors to the error-handling middleware
@@ -64,7 +75,7 @@ const add = async (req, res, next) => {
 // Ready to export the controller functions
 module.exports = {
   browse,
-  read,
+  login,
   // edit,
   add,
   // destroy,

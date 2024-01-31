@@ -1,7 +1,13 @@
-.body {
-  position: absolute;
+.title {
+  text-align: center;
+  font-size: 50px;
 }
 
-.containerHome {
+.logo {
+  position: fixed;
+  z-index: 1;
+}
+
+.body {
   position: relative;
 }

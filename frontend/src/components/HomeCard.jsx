@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./HomeCard.css";
 import { Carousel } from "react-responsive-carousel";
@@ -6,8 +7,9 @@ import { Carousel } from "react-responsive-carousel";
 function HomeCard({ home }) {
   return (
     <div className="homeImage">
-      <Carousel>
+      <Carousel className="carousel">
         <div className="carouselImage">
+          <h2>{home.name}</h2>
           <img className="logoImage" src={home.imageToUrl} alt="Slide 1" />
         </div>
         <div>
@@ -24,9 +26,14 @@ function HomeCard({ home }) {
         </div>
       </Carousel>
       <div className="homeDescriptif">
-        <p>{home.name}</p>
-        <p>{home.disponibilite}</p>
         <p>{home.descriptif}</p>
+      </div>
+      <div>
+        <Link to="/">
+          <button className="button" type="button">
+            Plus de renseignements
+          </button>
+        </Link>
       </div>
     </div>
   );

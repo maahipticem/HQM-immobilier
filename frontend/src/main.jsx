@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import axios from "axios";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { Authprovider } from "./contexts/Auth";
@@ -11,6 +11,8 @@ import UserPage from "./pages/UserPage";
 import LoginPage from "./pages/LoginPage";
 import connexion from "./services/connexion";
 import Administration from "./pages/Administration";
+import AnnoncePage from "./pages/AnnoncePage";
+import DashbordPage from "./pages/DashbordPage";
 
 const router = createBrowserRouter([
   {
@@ -20,11 +22,6 @@ const router = createBrowserRouter([
       return connexion.get("/apps").then((response) => {
         return response.data;
       });
-      // loader: async () => {
-      // const consultant = await axios
-      // .get(`${import.meta.env.VITE_BACKEND_URL}/api/apps`)
-      // .then((res) => res.data);
-      // return consultant;
     },
   },
   {
@@ -38,15 +35,25 @@ const router = createBrowserRouter([
   {
     path: "/administration",
     element: <Administration />,
+    children: [
+      {
+        path: "",
+        element: <DashbordPage />,
+      },
+      {
+        path: "annonces",
+        element: <AnnoncePage />,
+      },
+    ],
   },
+
   {
     path: "/homes",
     element: <HomePage />,
-    loader: async () => {
-      const consultant = await axios
-        .get(`${import.meta.env.VITE_BACKEND_URL}/api/homes`)
-        .then((res) => res.data);
-      return consultant;
+    loader: () => {
+      return connexion.get("/homes").then((response) => {
+        return response.data;
+      });
     },
   },
 ]);

@@ -54,9 +54,10 @@ CREATE TABLE user(
   id int unsigned primary key auto_increment not null,
   email VARCHAR(255) NOT NULL UNIQUE,
   hashpassword VARCHAR(255) NOT NULL
+  );
 
 
-);
+
 
 
 
@@ -185,7 +186,7 @@ Au Domaine Étoilé, chaque jour est une invitation à vivre le rêve méditerra
 
 
 
-INSERT INTO sale (name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, disponibilite,id_home )
+INSERT INTO home(name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, disponibilite )
 VALUES ("Domaine de la lune", "AHBGF","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1586/Photos00058.jpg?width=1440&q=65&func=crop","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1600/Photos00086.jpg?width=562&height=348&q=65", "https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1577/Photos00030.jpg?width=1440&q=65","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1586/Photos00058.jpg?width=1440&q=65&func=crop","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1603/Photos00093.jpg?width=1440&q=65","8 rue de la lune, Saint tropez", "Domaine de la lune
 
 Saint tropez,
@@ -195,8 +196,8 @@ France
 Tout en verre et en béton, la villa Hanoï se dresse au milieu d’un immense terrain au gazon parfaitement taillé. Sur la terrasse qui fait face à la mer, les parasols design et les transats rose chamallow rappellent les hôtels d’Ocean Drive. A l’intérieur, l’espace entièrement vitré et les murs immaculés mettent en valeur la décoration épurée, subtilement twistée par les meubles de designers, les touches de couleurs pop et la lumière des néons. Dans le salon, la table rose bonbon et un tableau d’art contemporain multicolore apportent du peps à la cuisine minimaliste. Des tapis turquoise, fuchsia ou vert pomme réchauffent le sol en béton ciré gris perle des chambres. 
 
 Depuis la villa, on n’a que quelques pas à faire pour accéder au très select Nikki Beach Club, accessible par voie privée. On peut aussi remonter jusqu’à Tahiti Beach, pour aller déguster un mojito les pieds dans le sable sur la terrasse colorée du Moorea. Le soir venu, on regagne la villa et on va faire quelques longueurs dans la piscine, avec une vue imprenable sur la Méditerranée, pendant que les enfants jouent à cache-cache dans les champs d’oliviers. 
-","2024-10-15",1);
-INSERT INTO sale (name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, disponibilite, id_home )
+","2024-10-15");
+INSERT INTO home (name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, disponibilite)
 VALUES ("Domaine de la constallion", "AHBGF","https://cdn.lecollectionist.com/__lecollectionist__/production/houses/5467/photos/fm2WvoJRbWJYKGAua0lg_57e31ab5-7862-43f2-d9e6-b75de57559ee.jpg?width=1440&q=65&func=crop","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/house-5467/2022-03-11-b2d8eb3b2b8a253a2827310c6523befa.jpeg?width=1140&height=400&q=65", "https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/house-5467/2022-03-11-f6749106f1b8a85d15bb7cdca44be8d9.jpeg?width=562&height=348&q=65","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/house-5467/2022-03-11-b81fbb844f590e8928603c336531ba88.jpeg?width=562&height=348&q=65","https://www.lecollectionist.com/fr/location-luxe/villa-maestra-presqu-ile-saint-tropez/photos","8 rue de la lune, Saint tropez", "Villa Maestra 
 
 Presqu'ile Saint-Tropez,
@@ -206,8 +207,8 @@ France
 Propriété contemporaine construite en 2017, implantée sur la commune de St-Tropez, dans le quartier de la Pierre Plantée, dans un secteur calme et recherché surplombant la baie des Cannoubiers.
 À cinq minutes en voiture du Port et de la Place des Lices avec accès facile aux Plages.
 Terrain plat d’une superficie de 2200 m2, surplombant les vignes avec vue mer au premier étage.
-Elle se compose de 8 chambres.","2024-10-15",3);
-INSERT INTO sale (name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, disponibilite, id_home )
+Elle se compose de 8 chambres.","2024-10-15");
+INSERT INTO home (name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, disponibilite )
 VALUES ("Domaine de la lune", "AHBGF","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1586/Photos00058.jpg?width=1440&q=65&func=crop","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1600/Photos00086.jpg?width=562&height=348&q=65", "https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1577/Photos00030.jpg?width=1440&q=65","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1586/Photos00058.jpg?width=1440&q=65&func=crop","https://cdn.lecollectionist.com/__collectionist__/production/uploads/photos/1603/Photos00093.jpg?width=1440&q=65","8 rue de la lune, Saint tropez", "Domaine de la lune
 
 Saint tropez,
@@ -217,7 +218,7 @@ France
 Tout en verre et en béton, la villa Hanoï se dresse au milieu d’un immense terrain au gazon parfaitement taillé. Sur la terrasse qui fait face à la mer, les parasols design et les transats rose chamallow rappellent les hôtels d’Ocean Drive. A l’intérieur, l’espace entièrement vitré et les murs immaculés mettent en valeur la décoration épurée, subtilement twistée par les meubles de designers, les touches de couleurs pop et la lumière des néons. Dans le salon, la table rose bonbon et un tableau d’art contemporain multicolore apportent du peps à la cuisine minimaliste. Des tapis turquoise, fuchsia ou vert pomme réchauffent le sol en béton ciré gris perle des chambres. 
 
 Depuis la villa, on n’a que quelques pas à faire pour accéder au très select Nikki Beach Club, accessible par voie privée. On peut aussi remonter jusqu’à Tahiti Beach, pour aller déguster un mojito les pieds dans le sable sur la terrasse colorée du Moorea. Le soir venu, on regagne la villa et on va faire quelques longueurs dans la piscine, avec une vue imprenable sur la Méditerranée, pendant que les enfants jouent à cache-cache dans les champs d’oliviers. 
-","2024-10-15",2);
+","2024-10-15");
 
 
 insert into user(email, hashpassword)

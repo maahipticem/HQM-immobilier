@@ -9,16 +9,19 @@ import "./HomePage.css";
 function HomePage() {
   const homes = useLoaderData();
   return (
-    <div className="body">
-      <section>
+    <div>
+      <div className="logo">
         <Navbar />
-      </section>
+      </div>
+      <h2 className="title">TROUVER VOTRE FUTURE PROPRIETE</h2>
 
-      <div>
-        <div className="containerHome">
-          {homes.map((home) => (
-            <HomeCard key={home.id} home={home} />
-          ))}
+      <div className="body">
+        <div>
+          <div className="containerHome">
+            {homes.map((home) => (
+              <HomeCard key={home.id} home={home} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -23,7 +23,7 @@ function LoginPage() {
     e.preventDefault();
     try {
       const valid = await connexion.post("/login", credentials);
-      setConnected(valid.data.msg);
+      setConnected(valid.data);
       setTimeout(() => {
         navigate("/administration");
       }, 1000);

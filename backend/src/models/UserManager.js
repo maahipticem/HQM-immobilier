@@ -22,11 +22,11 @@ class UserManager extends AbstractManager {
 
   // The Rs of CRUD - Read operations
 
-  async read(id) {
+  async read(email) {
     // Execute the SQL SELECT query to retrieve a specific item by its ID
     const [rows] = await this.database.query(
-      `select * from ${this.table} where id = ?`,
-      [id]
+      `select * from ${this.table} where email = ?`,
+      [email]
     );
 
     // Return the first row of the result, which represents the item
