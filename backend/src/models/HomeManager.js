@@ -36,7 +36,9 @@ class HomeManager extends AbstractManager {
   async read(id) {
     //   // Execute the SQL SELECT query to retrieve a specific item by its ID
     const [rows] = await this.database.query(
-      `select home.id, home.name, home.numeroOffre, home.imageToUrl, home.imageToUrl2,city.city, city.id_home from ${this.table} inner join city on city.id_home = ${this.table}.id where ${this.table}.id = ?`,
+      // `select home.id, home.name, home.numeroOffre, home.imageToUrl, home.imageToUrl2,city.city, city.id_home from ${this.table} inner join city on city.id_home = ${this.table}.id where ${this.table}.id = ?`,
+      // [id]
+      `select home.id, home.name, home.numeroOffre, home.descriptif,home.imageToUrl, home.imageToUrl2, home.imageToUrl3, home.imageToUrl4, home.imageToUrl5 from ${this.table} where id = ?`,
       [id]
     );
 

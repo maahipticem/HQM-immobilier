@@ -9,7 +9,7 @@ function HomeCard({ home }) {
     <div className="homeImage">
       <Carousel className="carousel">
         <div className="carouselImage">
-          <Link to="/">
+          <Link to={`/homes/${home.id}`}>
             <h2>{home.name}</h2>
           </Link>
           <img className="logoImage" src={home.imageToUrl} alt="Slide 1" />

@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import { carousel } from "react-responsive-carousel";
 import HomeCard from "../components/HomeCard";
@@ -23,6 +23,7 @@ function HomePage() {
             ))}
           </div>
         </div>
+        <Outlet />
       </div>
     </div>
   );

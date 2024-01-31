@@ -13,6 +13,7 @@ import connexion from "./services/connexion";
 import Administration from "./pages/Administration";
 import AnnoncePage from "./pages/AnnoncePage";
 import DashboardPage from "./pages/DashboardPage";
+import DetailAnnoncePage from "./pages/DetailAnnoncePage";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,15 @@ const router = createBrowserRouter([
       return connexion.get("/homes").then((response) => {
         return response.data;
       });
+    },
+  },
+
+  {
+    path: "/homes/:homeId",
+    element: <DetailAnnoncePage />,
+    loader: async ({ params }) => {
+      const response = await connexion.get(`homes/${params.homeId}`);
+      return response.data;
     },
   },
 ]);
