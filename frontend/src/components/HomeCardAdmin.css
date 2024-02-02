@@ -5,13 +5,12 @@
   gap: 10px;
 }
 
-.homeImage {
-  flex-direction: column;
-  gap: 10px;
-  grid-template-columns: auto;
-  align-items: stretch;
-  margin: 30px;
-  display: flex;
+.containerHomeImageAdmin {
+  margin-top: 10px;
   align-items: center;
-  justify-content: center;
+  padding: 10px;
+  background-color: whitesmoke;
+  box-shadow: 6px 16px 36px 13px rgba(119, 113, 113, 0.29);
+  -webkit-box-shadow: 6px 30px 36px 13px rgb(0 0 0 / 20%);
+  -moz-box-shadow: 6px 16px 50px 18px rgba(0, 0, 0, 0.29);
 }

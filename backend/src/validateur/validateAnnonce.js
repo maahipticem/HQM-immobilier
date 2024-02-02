@@ -1,6 +1,9 @@
 const Joi = require("joi");
 
 const schema = Joi.object({
+  id: Joi.number(),
+  id_city: Joi.number(),
+  city: Joi.string(),
   name: Joi.string().required(),
   numeroOffre: Joi.string().required(),
   imageToUrl: Joi.string().required(),
@@ -10,7 +13,9 @@ const schema = Joi.object({
   imageToUrl5: Joi.string().required(),
   adresse: Joi.string().required(),
   descriptif: Joi.string().required(),
-  disponibilite: Joi.string().required(),
+  descriptif2: Joi.string().required(),
+  descriptif3: Joi.string().required(),
+  disponibilite: Joi.string(),
 });
 
 const validateAnnonce = (req, res, next) => {

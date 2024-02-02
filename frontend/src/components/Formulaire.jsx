@@ -7,8 +7,8 @@ function Formulaire() {
   const [sendMessage, setSendMessage] = useState("");
 
   const [formulaire, setFormulaire] = useState({
-    nom: "",
     prenom: "",
+    nom: "",
     email: "",
     message: "",
   });

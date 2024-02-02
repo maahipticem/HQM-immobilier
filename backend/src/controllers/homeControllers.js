@@ -54,6 +54,29 @@ const add = async (req, res, next) => {
   }
 };
 
+const edit = async (req, res, next) => {
+  // Extract the user data from the request body
+  const homes = req.body;
+  try {
+    // Fetch a specific city from the database based on the provided ID
+    const result = await tables.home.update(
+      req.params.id,
+      homes,
+      homes.id_city
+    );
+
+    // If the home is not found, respond with HTTP 404 (Not Found)
+    if (result.affectedRows === 1) {
+      res.sendStatus(204);
+    } else {
+      res.sendStatus(404);
+    }
+  } catch (err) {
+    // Pass any errors to the error-handling middleware
+    next(err);
+  }
+};
+
 // The D of BREAD - Destroy (Delete) operation
 // This operation is not yet implemented
 const destroy = async (req, res, next) => {
@@ -69,7 +92,7 @@ const destroy = async (req, res, next) => {
 module.exports = {
   browse,
   read,
-  // edit,
+  edit,
   add,
   destroy,
 };

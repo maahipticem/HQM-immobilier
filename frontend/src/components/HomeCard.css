@@ -1,13 +1,15 @@
 .logoImage {
-  width: 20%;
-  height: 400px;
+  width: 60%;
+  height: 350px;
   border-radius: 10px;
 }
 
-.homeImage {
+.homeImageHome {
   display: flex;
-  gap: 100px;
-
+  gap: 10px;
+  margin-top: 40px;
+  margin-right: 3px;
+  margin-left: 90px;
   align-items: center;
   flex-direction: row;
   border-bottom-width: medium;
@@ -15,8 +17,13 @@
   position: relative;
   float: left;
   background-color: whitesmoke;
+  width: 40%;
+  grid-template-columns: 50px 1fr;
 }
-
+.linkTitle {
+  color: black;
+  text-decoration: none;
+}
 .homeDescriptif {
   color: black;
 

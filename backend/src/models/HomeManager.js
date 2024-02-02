@@ -9,10 +9,48 @@ class HomeManager extends AbstractManager {
 
   // The C of CRUD - Create operation
 
+  // async create(home) {
+  //   // Execute the SQL INSERT query to add a new item to the "item" table
+  //   const [result] = await this.database.query(
+  //     `insert into ${this.table} (name,numeroOffre,imageToUrl,imageToUrl2,imageToUrl3,imageToUrl4,imageToUrl5,adresse,descriptif,descriptif2,descriptif3,disponibilite, id_city ) values (?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+  //     [
+  //       home.name,
+  //       home.numeroOffre,
+  //       home.imageToUrl,
+  //       home.imageToUrl2,
+  //       home.imageToUrl3,
+  //       home.imageToUrl4,
+  //       home.imageToUrl5,
+  //       home.adresse,
+  //       home.descriptif,
+  //       home.descriptif2,
+  //       home.descriptif3,
+  //       home.disponibilite,
+  //       home.city,
+  //     ]
+  //   );
+
+  //   // Return the ID of the newly inserted item
+  //   return result.insertId;
+  // }
   async create(home) {
+    // Vérifiez si la ville existe dans la table city
+    const [cityResult] = await this.database.query(
+      "SELECT id FROM city WHERE city = ?",
+      [home.city]
+    );
+
+    let cityId;
+
+    if (cityResult.length > 0) {
+      cityId = cityResult[0].id;
+    } else {
+      throw new Error("La ville spécifiée n'existe pas dans la table city");
+    }
+
     // Execute the SQL INSERT query to add a new item to the "item" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (name,numeroOffre,imageToUrl,imageToUrl2,imageToUrl3,imageToUrl4,imageToUrl5,adresse,descriptif,disponibilite ) values (?,?,?,?,?,?,?,?,?,?)`,
+      `INSERT INTO ${this.table} (name, numeroOffre, imageToUrl, imageToUrl2, imageToUrl3, imageToUrl4, imageToUrl5, adresse, descriptif, descriptif2, descriptif3, disponibilite, id_city) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         home.name,
         home.numeroOffre,
@@ -23,7 +61,10 @@ class HomeManager extends AbstractManager {
         home.imageToUrl5,
         home.adresse,
         home.descriptif,
+        home.descriptif2,
+        home.descriptif3,
         home.disponibilite,
+        cityId, // Utilisez l'ID de la ville
       ]
     );
 
@@ -36,10 +77,10 @@ class HomeManager extends AbstractManager {
   async read(id) {
     //   // Execute the SQL SELECT query to retrieve a specific item by its ID
     const [rows] = await this.database.query(
-      // `select home.id, home.name, home.numeroOffre, home.imageToUrl, home.imageToUrl2,city.city, city.id_home from ${this.table} inner join city on city.id_home = ${this.table}.id where ${this.table}.id = ?`,
-      // [id]
-      `select home.id, home.name, home.numeroOffre, home.descriptif,home.imageToUrl, home.imageToUrl2, home.imageToUrl3, home.imageToUrl4, home.imageToUrl5 from ${this.table} where id = ?`,
+      `select home.id, home.name, home.numeroOffre,home.adresse, home.descriptif, home.descriptif2, home.descriptif3,home.imageToUrl, home.imageToUrl2,home.imageToUrl3, home.imageToUrl4, home.imageToUrl5,home.id_city, city.city from ${this.table} inner join city on city.id = ${this.table}.id_city WHERE ${this.table}.id = ?`,
       [id]
+      // `select home.id, home.name, home.numeroOffre,home.adresse,home.disponibilite, home.descriptif, home.descriptif2, home.descriptif3,home.imageToUrl, home.imageToUrl2, home.imageToUrl3, home.imageToUrl4, home.imageToUrl5 from ${this.table} where id = ?`,
+      // [id]
     );
 
     //   // Return the first row of the result, which represents the item
@@ -57,6 +98,40 @@ class HomeManager extends AbstractManager {
 
   // The U of CRUD - Update operation
   // TODO: Implement the update operation to modify an existing item
+
+  async update(id, homes) {
+    // Execute the SQL SELECT query to retrieve a specific user by its ID
+    // const [result] = await this.database.query(
+    //   `UPDATE ${this.table} set ? WHERE id = ?`,
+    //   [homes, id]
+    // );
+    const [result] = await this.database.query(
+      `UPDATE ${this.table}
+       INNER JOIN city ON city.id = ${this.table}.id_city
+       SET ${this.table}.name = ?, ${this.table}.numeroOffre = ?, ${this.table}.adresse = ?, ${this.table}.descriptif = ?, ${this.table}.descriptif2 = ?, ${this.table}.descriptif3 = ?,
+           ${this.table}.imageToUrl = ?, ${this.table}.imageToUrl2 = ?, ${this.table}.imageToUrl3 = ?, ${this.table}.imageToUrl4 = ?, ${this.table}.imageToUrl5 = ?,
+           ${this.table}.id_city = ?
+       WHERE ${this.table}.id = ?`,
+      [
+        homes.name,
+        homes.numeroOffre,
+        homes.adresse,
+        homes.descriptif,
+        homes.descriptif2,
+        homes.descriptif3,
+        homes.imageToUrl,
+        homes.imageToUrl2,
+        homes.imageToUrl3,
+        homes.imageToUrl4,
+        homes.imageToUrl5,
+        homes.id_city,
+        id,
+      ]
+    );
+
+    // Return the first row of the result, which represents the item
+    return result;
+  }
 
   // async update(item) {
   //   ...

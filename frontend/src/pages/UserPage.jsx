@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Footer from "../components/Footer";
+import Title from "../components/Title";
 
 function UserPage() {
   const [formData, setFormData] = useState({
@@ -7,6 +10,7 @@ function UserPage() {
     hashpassword: "",
     confirmpassword: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,7 +27,10 @@ function UserPage() {
         `${import.meta.env.VITE_BACKEND_URL}/api/users`,
         formData
       );
-      console.info("nouvel utilisateur ajouté:", response.data);
+      setTimeout(() => {
+        console.info("nouvel utilisateur ajouté:", response.data);
+        navigate("/login");
+      }, 1000);
     } catch (error) {
       console.error("Error lors de l'ajout de l'utilisateur:", error);
     }
@@ -31,8 +38,11 @@ function UserPage() {
 
   return (
     <div>
-      <h2>Création identifiant</h2>
-      <form onSubmit={handleSubmit}>
+      <div>
+        <Title />
+      </div>
+      <h2 className="title">Création d'identifiant</h2>
+      <form className="contact" onSubmit={handleSubmit}>
         <label className="email">
           Email:
           <input
@@ -71,6 +81,10 @@ function UserPage() {
 
         <button type="submit">INSCRIPTION</button>
       </form>
+
+      <div className="footerUser">
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     element: <LoginPage />,
   },
   {
-    path: "/administration",
+    path: "/administration/",
     element: <Administration />,
     children: [
       {
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         element: <DashboardPage />,
       },
       {
-        path: "annonces",
+        path: "annonces/:id",
         element: <AnnoncePage />,
       },
     ],

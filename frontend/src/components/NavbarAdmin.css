@@ -1,6 +1,12 @@
-.navigation {
-  gap: 10px;
+.admin {
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  margin-right: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
 }

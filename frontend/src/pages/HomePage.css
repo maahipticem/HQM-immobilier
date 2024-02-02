@@ -1,13 +1,25 @@
 .title {
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
+  font-style: italic;
+  margin-top: 10px;
 }
 
 .logo {
   position: fixed;
   z-index: 1;
 }
+.containerHome {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr; */
+
+  align-items: center;
+}
 
 .body {
   position: relative;
+}
+
+.buttonHome {
+  align-content: center;
 }

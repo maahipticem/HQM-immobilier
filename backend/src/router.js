@@ -33,6 +33,13 @@ router.post("/users", validateUser, userControllers.add);
 router.post("/login", validateUser, userControllers.login);
 router.post("/homes", checkCredentials, validateAnnonce, homeControllers.add);
 
+router.put(
+  "/homes/:id",
+  checkCredentials,
+  validateAnnonce,
+  homeControllers.edit
+);
+
 router.delete("/homes/:id", homeControllers.destroy);
 /* ************************************************************************* */
 

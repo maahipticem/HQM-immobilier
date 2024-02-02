@@ -1,21 +1,62 @@
-.form-alllabel {
+.labelAdmin {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: baseline;
 }
 
 .titleAdmin {
   text-align: center;
-  margin-top: 100px;
-  font-size: 50px;
+  margin-top: 30px;
+  font-size: 40px;
+  font-style: italic;
 }
 
-.label-form {
+.labelForm {
+  gap: 2px;
   margin-left: 10px;
   border-color: #a79b90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.labelForm input {
+  width: 100%;
+  height: 40px;
+}
+.labelForm textarea {
+  width: 100%;
+  height: 40px;
+}
 .connection-button {
+  text-align: center;
+  font-style: italic;
+}
+
+.form-container {
+  margin: 10px;
+}
+
+.contactAdmin {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  font-weight: bold;
+  font-size: 1.5rem;
+  gap: 40px;
+  /* border: solid; */
+  /* box-shadow: 6px 6px 6px black; */
+  width: 30%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1rem;
+  color: black;
+  box-shadow: 6px 16px 36px 13px rgb(0 0 0 / 29%);
+  -webkit-box-shadow: 6px 16px 36px 13px rgb(0 0 0 / 29%);
+  -moz-box-shadow: 6px 16px 36px 13px rgba(0, 0, 0, 0.29);
+}
+
+.message {
   text-align: center;
 }

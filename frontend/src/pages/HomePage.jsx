@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import { carousel } from "react-responsive-carousel";
 import HomeCard from "../components/HomeCard";
@@ -10,21 +10,22 @@ function HomePage() {
   const homes = useLoaderData();
   return (
     <div>
-      <div className="logo">
-        <Navbar />
-      </div>
-      <h2 className="title">TROUVER VOTRE FUTURE PROPRIETE</h2>
+      <main>
+        <div className="logo">
+          <Link to="/">
+            <Navbar />
+          </Link>
+        </div>
+        <h2 className="title">TROUVER VOTRE FUTURE PROPRIETE</h2>
 
-      <div className="body">
-        <div>
-          <div className="containerHome">
+        <div className="body">
+          <div>
             {homes.map((home) => (
               <HomeCard key={home.id} home={home} />
             ))}
           </div>
         </div>
-        <Outlet />
-      </div>
+      </main>
     </div>
   );
 }

@@ -6,34 +6,34 @@ import { Carousel } from "react-responsive-carousel";
 
 function HomeCard({ home }) {
   return (
-    <div className="homeImage">
+    <div className="homeImageHome">
       <Carousel className="carousel">
         <div className="carouselImage">
-          <Link to={`/homes/${home.id}`}>
+          <Link to={`/homes/${home.id}`} className="linkTitle">
             <h2>{home.name}</h2>
           </Link>
           <img className="logoImage" src={home.imageToUrl} alt="Slide 1" />
         </div>
         <div>
-          <Link to="/">
+          <Link to={`/homes/${home.id}`} className="linkTitle">
             <h2>{home.name}</h2>
           </Link>
           <img className="logoImage" src={home.imageToUrl2} alt="Slide 2" />
         </div>
         <div>
-          <Link to="/">
+          <Link to={`/homes/${home.id}`} className="linkTitle">
             <h2>{home.name}</h2>
           </Link>
           <img className="logoImage" src={home.imageToUrl3} alt="Slide 3" />
         </div>
         <div>
-          <Link to="/">
+          <Link to={`/homes/${home.id}`} className="linkTitle">
             <h2>{home.name}</h2>
           </Link>
           <img className="logoImage" src={home.imageToUrl4} alt="Slide 4" />
         </div>
         <div>
-          <Link to="/">
+          <Link to={`/homes/${home.id}`} className="linkTitle">
             <h2>{home.name}</h2>
           </Link>
           <img className="logoImage" src={home.imageToUrl5} alt="Slide 5" />

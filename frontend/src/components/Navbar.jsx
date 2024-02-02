@@ -4,19 +4,20 @@ import Title from "./Title";
 
 import "./Navbar.css";
 
-function Navbar({ onVendreClick, onContactClick }) {
+function Navbar({ onContactClick }) {
   return (
     <nav className="nav">
       <div>
         <Title />
       </div>
       <div className="navbar">
+        <Link to="/" className="buttonHome">
+          <button type="button" className="paragrapheNavbar">
+            Acceuil
+          </button>
+        </Link>
         <Link to="/homes" className="buttonApp">
-          <button
-            type="button"
-            className="paragrapheNavbar"
-            onClick={onVendreClick}
-          >
+          <button type="button" className="paragrapheNavbar">
             Vendre
           </button>
         </Link>

@@ -3,6 +3,7 @@ import { Navigate, Link } from "react-router-dom";
 
 import { AuthContext } from "../contexts/Auth";
 import "./NavbarAdmin.css";
+import Title from "./Title";
 
 function NavbarAdmin() {
   const { connected, setConnected } = useContext(AuthContext);
@@ -10,18 +11,21 @@ function NavbarAdmin() {
     return <Navigate to="/" replace />;
   }
   return (
-    <div>
+    <div className="admin">
+      <div>
+        <Title />
+      </div>
       <nav className="navigation">
-        <Link to="/">
-          <button type="button">HOME</button>
+        <Link to="/" className="button">
+          HOME
         </Link>
 
-        <Link to="/administration">
-          <button type="button">DASHBOARD</button>
+        <Link to="/administration" className="button">
+          DASHBOARD
         </Link>
 
-        <Link to="annonces">
-          <button type="button">GESTION DES ANNONCES</button>
+        <Link to="/administration/annonces/new" className="button">
+          GESTION DES ANNONCES
         </Link>
         <button type="button" onClick={() => setConnected({ role: null })}>
           DECONNEXION
